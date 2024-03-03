@@ -6,7 +6,7 @@ function Whatsapp() {
   React.useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.pageYOffset;
-      const triggerHeight = 40; // Altura de desencadenamiento en píxeles
+      const triggerHeight = 10; // Altura de desencadenamiento en píxeles
 
       if (scrollPosition > triggerHeight) {
         setShowObject(true);

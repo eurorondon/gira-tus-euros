@@ -5,6 +5,7 @@ import Tasa from "./components/Tasa";
 import Calculadora from "./components/Calculadora";
 import OpcionesEnvio from "./components/OpcionesEnvio";
 import Whatsapp from "./components/Whatsapp";
+import MontoMinimo from "./components/MontoMinimo";
 
 const BgStyle = {
   backgroundImage: `url(../../public/fondo.png)`,
@@ -22,6 +23,7 @@ export default function Home() {
       <Tasa />
       <Calculadora />
       <OpcionesEnvio />
+      <MontoMinimo />
       <Whatsapp />
     </div>
   );
