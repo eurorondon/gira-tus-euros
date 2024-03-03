@@ -23,6 +23,7 @@ const navLinks = [
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [scrollBackground, setScrollBackground] = useState(false);
 
   React.useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -41,14 +42,36 @@ const Navbar = () => {
     };
   }, [navbarOpen]);
 
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const shouldAddBackground = scrollPosition > 3; // Cambia el valor según tu necesidad
+
+      setScrollBackground(shouldAddBackground);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <nav
       className={
         navbarOpen
-          ? "fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-20 bg-[#121212] bg-opacity-100"
-          : "fixed mx-auto border border-[#33353f00]  top-0 left-0 right-0 z-20  bg-opacity-100"
+          ? "fixed mx-auto border  border-[#33353F] top-0 left-0 right-0 z-20 bg-[#121212] bg-opacity-100"
+          : `fixed mx-auto border  border-[#33353f00]  top-0 left-0 right-0 z-20  bg-opacity-100 ${
+              scrollBackground ? "bg-[#2a2a2a]" : "bg-transparent"
+            } `
       }
     >
+      {/* <nav
+      className={`fixed mx-auto border top-0 left-0 right-0 z-20 bg-opacity-100 ${
+        scrollBackground ? "bg-[#121212]" : "bg-transparent"
+      }`}
+    > */}
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2 ">
         <Link
           href={"/"}

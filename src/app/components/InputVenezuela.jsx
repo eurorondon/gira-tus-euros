@@ -61,7 +61,7 @@ const InputVenezuela = () => {
         <div className="flex h-16 w-full border rounded-lg relative">
           <input
             type="number"
-            className="w-full outline-none text-2xl font-bold text-right p-8 flex-grow-1 mr-5"
+            className="w-full outline-none text-2xl font-bold text-right px-8 flex-grow-1 mr-5"
             placeholder="Enter amount"
             value={inputText}
             onChange={(e) => setInputText(e.target.value.toLowerCase())}

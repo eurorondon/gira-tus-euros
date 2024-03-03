@@ -3,6 +3,8 @@ import fondo from "../../public/fondo.png";
 import Hero from "./components/Hero";
 import Tasa from "./components/Tasa";
 import Calculadora from "./components/Calculadora";
+import OpcionesEnvio from "./components/OpcionesEnvio";
+import Whatsapp from "./components/Whatsapp";
 
 const BgStyle = {
   backgroundImage: `url(../../public/fondo.png)`,
@@ -19,6 +21,8 @@ export default function Home() {
       <Hero />
       <Tasa />
       <Calculadora />
+      <OpcionesEnvio />
+      <Whatsapp />
     </div>
   );
 }

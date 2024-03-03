@@ -5,7 +5,7 @@ import InputVenezuela from "./InputVenezuela";
 export default function Calculadora() {
   return (
     <div className="px-4  py-5 bg-white mx-4  rounded-xl p-3  shadow-md">
-      <div className="mt-5">
+      <div className="mt-5 mb-10">
         <h3 className="text-lg font-semibold">
           Calcula tu envío desde España o Europa y{" "}
           <span
