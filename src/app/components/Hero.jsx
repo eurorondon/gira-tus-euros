@@ -15,7 +15,8 @@ const Hero = () => {
   return (
     <div
       style={BgStyle}
-      className="dark:bg-black dark:text-white duration-300 "
+      //   className="dark:bg-black dark:text-white   duration-300 "
+      className="bg-black text-white   duration-300 "
     >
       <div className="container min-h-[210px] flex items-center">
         <Navbar />
