@@ -6,6 +6,9 @@ import Calculadora from "./components/Calculadora";
 import OpcionesEnvio from "./components/OpcionesEnvio";
 import Whatsapp from "./components/Whatsapp";
 import MontoMinimo from "./components/MontoMinimo";
+import Terminos from "./components/Terminos";
+import InstruccionesEnvio from "./components/InstruccionesEnvio";
+import NumeroContacto from "./components/NumeroContacto";
 
 const BgStyle = {
   backgroundImage: `url(../../public/fondo.png)`,
@@ -24,6 +27,9 @@ export default function Home() {
       <Calculadora />
       <OpcionesEnvio />
       <MontoMinimo />
+      <Terminos />
+      <InstruccionesEnvio />
+      <NumeroContacto />
       <Whatsapp />
     </div>
   );

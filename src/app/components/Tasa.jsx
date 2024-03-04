@@ -15,7 +15,7 @@ export default function Tasa() {
             35.50 bs x EUR
           </p>
           <div
-            className="p-1 "
+            className="p-1  rounded-md"
             style={{ backgroundColor: "rgba(44, 199, 209, 0.19)" }}
           >
             <p className="text-xs" style={{ color: "#545353" }}>
