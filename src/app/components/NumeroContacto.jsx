@@ -22,8 +22,14 @@ function NumeroContacto() {
           Escribenos aqui
         </button>
       </div>
-      <div className="mx-4 my-4">
-        <Image src={"/gt.png"} alt="gt" width={400} height={400} />
+      <div className="mx-4 my-4 rounded-lg">
+        <Image
+          src={"/gt2.png"}
+          alt="gt"
+          width={400}
+          height={400}
+          className="rounded-lg"
+        />
       </div>
     </>
   );

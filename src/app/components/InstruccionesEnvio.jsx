@@ -11,7 +11,19 @@ function InstruccionesEnvio() {
         Venezuela.
       </p>
 
-      <div className="grid grid-cols-2 mx-5 ">
+      <div className="grid gap-x-4 gap-y-2 grid-cols-2 mx-5 ">
+        <Image src={"/2.png"} alt="intruccion1" height={150} width={150} />
+        <Image src={"/3.png"} alt="intruccion1" height={150} width={150} />
+        <Image src={"/4.png"} alt="intruccion1" height={150} width={150} />
+        <Image
+          src={"/instruccion4.png"}
+          alt="intruccion1"
+          height={150}
+          width={150}
+        />
+      </div>
+
+      {/* <div className="grid grid-cols-2 mx-5 ">
         <Image
           src={"/instruccion1.png"}
           alt="intruccion1"
@@ -36,7 +48,7 @@ function InstruccionesEnvio() {
           height={150}
           width={150}
         />
-      </div>
+      </div> */}
       <div className="flex justify-center ">
         <button
           class="flex items-center gap-3 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded mt-3"

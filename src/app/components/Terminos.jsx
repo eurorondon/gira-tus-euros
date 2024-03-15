@@ -61,12 +61,7 @@ function Terminos() {
           pago
         </h4>
         <div className="mx-auto mt-2">
-          <Image
-            src={"/metodos.png"}
-            alt={"metodos"}
-            width={250}
-            height={250}
-          />
+          <Image src={"/1.png"} alt={"metodos"} width={300} height={300} />
         </div>
       </div>
     </>
