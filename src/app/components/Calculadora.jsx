@@ -8,12 +8,15 @@ export default function Calculadora({ tasa, euro, setEuro, ves, setVes }) {
       <div className="mt-5 mb-10">
         <h3 className="text-lg font-semibold">
           Calcula tu envío desde España o Europa y{" "}
-          <span
+          <button
             className="px-2  py-1 rounded-md font-bold"
             style={{ backgroundColor: "#DCEC20" }}
+            onClick={() => {
+              window.open("https://wa.me/message/2GZHD5NUAMOZC1", "_blank");
+            }}
           >
             CONTACTANOS AQUI
-          </span>
+          </button>
         </h3>
       </div>
       <Selector setEuro={setEuro} euro={euro} tasa={tasa} setVes={setVes} />

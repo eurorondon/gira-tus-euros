@@ -18,7 +18,12 @@ function NumeroContacto() {
             Cualquier otro números de contacto es falso.
           </p>
         </div>
-        <button className="text-xs py-1 px-2 border border-yellow-400 rounded-lg font-extralight">
+        <button
+          className="text-xs py-1 px-2 border border-yellow-400 rounded-lg font-extralight"
+          onClick={() => {
+            window.open("https://wa.me/message/2GZHD5NUAMOZC1", "_blank");
+          }}
+        >
           Escribenos aqui
         </button>
       </div>

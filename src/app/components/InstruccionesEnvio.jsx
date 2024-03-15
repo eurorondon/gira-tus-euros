@@ -48,6 +48,9 @@ function InstruccionesEnvio() {
         <button
           className="flex items-center gap-3 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded mt-3"
           style={{ backgroundColor: colors.primary }}
+          onClick={() => {
+            window.open("https://wa.me/message/2GZHD5NUAMOZC1", "_blank");
+          }}
         >
           <p className="text-xs">CONTACTANOS AHORA </p>
         </button>

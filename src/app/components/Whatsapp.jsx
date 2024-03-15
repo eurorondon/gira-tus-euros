@@ -23,8 +23,11 @@ function Whatsapp() {
   }, []);
   if (showObject)
     return (
-      <div
+      <button
         className=" rounded-t-2xl sticky bottom-0 w-full"
+        onClick={() => {
+          window.open("https://wa.me/message/2GZHD5NUAMOZC1", "_blank");
+        }}
         style={{ backgroundColor: "#DCEC20" }}
       >
         <div className="p-4 " style={{ color: "#545353" }}>
@@ -35,7 +38,7 @@ function Whatsapp() {
             </span>
           </h3>
         </div>
-      </div>
+      </button>
     );
 }
 
