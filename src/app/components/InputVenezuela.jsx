@@ -52,7 +52,6 @@ const InputVenezuela = ({ tasa, euro, setEuro }) => {
   console.log(numFormat);
   return (
     <div className="relative mt-3 ">
-      <h1>{inputValue}</h1>
       <div
         className="bg-white px-4 text-xs absolute z-10  "
         style={{ top: "-7px", left: "20px" }}
