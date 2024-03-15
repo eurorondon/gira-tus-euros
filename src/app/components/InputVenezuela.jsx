@@ -25,31 +25,25 @@ const europeanCountries = [
   },
 ];
 
-const InputVenezuela = ({ tasa, euro, setEuro }) => {
+const InputVenezuela = ({ tasa, euro, setEuro, input, ves, setVes }) => {
   const [countries, setCountries] = useState(europeanCountries);
 
-  const [inputValue, setInputValue] = useState();
   const [selected, setSelected] = useState("/venezuela.png");
   const [open, setOpen] = useState(false);
-  const [numFormat, setNumFormat] = useState();
-
-  // useEffect(() => {
-  //   // setInputValue((tasa * euro).toFixed(2));
-  //   setInputValue(tasa * euro);
-  // }, [tasa, euro]);
+  const [inputValue, setInputValue] = useState(tasa * euro);
 
   const handleChangeEuro = (e) => {
-    const newValue = parseFloat(e);
-    const formattedValue = newValue.toLocaleString("es-VE", {
-      minimumFractionDigits: 2,
-    });
-    setNumFormat(formattedValue);
+    setVes(e);
 
-    setInputValue(newValue);
-    const calculoEuro = newValue / tasa;
-    setEuro(calculoEuro.toFixed(2));
+    const newValue = e;
+    // console.log(newValue);
+    const formattedEuro = newValue / tasa;
+
+    setEuro(formattedEuro.toFixed(2));
   };
-  console.log(numFormat);
+
+  console.log(ves);
+
   return (
     <div className="relative mt-3 ">
       <div
@@ -81,9 +75,9 @@ const InputVenezuela = ({ tasa, euro, setEuro }) => {
             type="number"
             className="w-full outline-none text-2xl font-bold text-right px-8 flex-grow-1 mr-5 "
             placeholder={tasa * euro}
-            value={inputValue}
+            value={ves}
             // onChange={(e) => setInputText(e.target.value.toLowerCase())}
-            onChange={(e) => handleChangeEuro(e.target.value.toLowerCase())}
+            onChange={(e) => handleChangeEuro(e.target.value)}
           />
           <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-2xl font-bold">
             Bs

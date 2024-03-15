@@ -16,7 +16,13 @@ function MontoMinimo() {
       </div>
 
       <div className="flex justify-center my-5 gap-3">
-        <Image src={"/card.png"} alt="card" width={40} height={40} />{" "}
+        <Image
+          src={"/card.png"}
+          alt="card"
+          width={40}
+          height={40}
+          style={{ width: "auto", height: "auto" }}
+        />{" "}
         <h4 className=" text-xl font-bold">20 € EUR</h4>{" "}
       </div>
       <div

@@ -23,12 +23,27 @@ const BgStyle = {
 
 export default function Home() {
   const [tasa, setTasa] = React.useState(37);
-  const [euro, setEuro] = React.useState(100);
+  const [euro, setEuro] = React.useState(20);
+  const formatNumber = (number) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  };
+
+  // Calcular el valor inicial de VES y formatearlo con separadores de miles
+  const initialVesValue = formatNumber(tasa * euro);
+
+  // Inicializar el estado de VES con el valor formateado
+  const [ves, setVes] = React.useState(initialVesValue);
   return (
     <div className="">
       <Hero />
       <Tasa tasa={tasa} />
-      <Calculadora tasa={tasa} euro={euro} setEuro={setEuro} />
+      <Calculadora
+        tasa={tasa}
+        euro={euro}
+        setEuro={setEuro}
+        ves={ves}
+        setVes={setVes}
+      />
       <OpcionesEnvio />
       <MontoMinimo />
       <Terminos />

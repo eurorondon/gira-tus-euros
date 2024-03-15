@@ -77,7 +77,13 @@ const Navbar = () => {
           href={"/"}
           className="text-sm md:text-5xl text-white font-semibold flex items-center gap-3"
         >
-          <Image src="/logo.png" alt="logo" height={43} width={43} />
+          <Image
+            src="/logo.png"
+            alt="logo"
+            height={43}
+            width={43}
+            style={{ width: "auto", height: "auto" }}
+          />
           <span>Gira tus Euros</span>
         </Link>
         <div className="mobile-menu block md:hidden">

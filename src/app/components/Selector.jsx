@@ -25,16 +25,22 @@ const europeanCountries = [
   },
 ];
 
-const Selector = ({ setEuro, euro }) => {
+const Selector = ({ setEuro, euro, tasa, setVes }) => {
   const [countries, setCountries] = useState(europeanCountries);
-  const [inputValue, setInputValue] = useState("");
-  const [input, setInput] = useState();
+  const [inputValor, setInputValor] = useState("");
+  const [input, setInput] = useState("euro");
   const [selected, setSelected] = useState("/spain.png");
   const [open, setOpen] = useState(false);
 
   const handleChangeEuro = (e) => {
     setInput(e);
     setEuro(e);
+    // Convertir el número a formato con separadores de miles
+    const vesWithSeparators = (e * tasa).toLocaleString("es-VE", {
+      maximumFractionDigits: 2, // Opcional: puedes establecer el número máximo de decimales
+    });
+
+    setVes(vesWithSeparators);
   };
 
   return (
@@ -87,7 +93,7 @@ const Selector = ({ setEuro, euro }) => {
               "bg-sky-600 text-white"
             }
             ${
-              country?.name?.toLowerCase().startsWith(inputValue)
+              country?.name?.toLowerCase().startsWith(inputValor)
                 ? "block"
                 : "hidden"
             }`}
@@ -95,7 +101,7 @@ const Selector = ({ setEuro, euro }) => {
                   if (country?.name?.toLowerCase() !== selected.toLowerCase()) {
                     setSelected(country?.image);
                     setOpen(false);
-                    setInputValue("");
+                    setInputValor("");
                   }
                 }}
               >
