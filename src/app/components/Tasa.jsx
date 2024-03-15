@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Tasa() {
+export default function Tasa({ tasa }) {
   return (
     <div className="flex items-center justify-center  relative mb-20  ">
       <div
@@ -12,7 +12,7 @@ export default function Tasa() {
             TASA DEL DIA
           </h3>
           <p className="text-2xl font-extrabold" style={{ color: "#545353" }}>
-            35.50 bs x EUR
+            {tasa} bs x EUR
           </p>
           <div
             className="p-1  rounded-md"

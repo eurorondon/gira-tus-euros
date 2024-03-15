@@ -7,7 +7,7 @@ function MontoMinimo() {
     <>
       <div className="flex justify-center mt-16">
         <button
-          class="flex items-center gap-3 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="flex items-center gap-3 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           style={{ backgroundColor: colors.primary }}
         >
           <span>Monto minimo de envio </span>

@@ -25,12 +25,17 @@ const europeanCountries = [
   },
 ];
 
-const Selector = () => {
+const Selector = ({ setEuro, euro }) => {
   const [countries, setCountries] = useState(europeanCountries);
   const [inputValue, setInputValue] = useState("");
-  const [inputText, setInputText] = useState("100");
+  const [input, setInput] = useState();
   const [selected, setSelected] = useState("/spain.png");
   const [open, setOpen] = useState(false);
+
+  const handleChangeEuro = (e) => {
+    setInput(e);
+    setEuro(e);
+  };
 
   return (
     <div className="relative mt-3 ">
@@ -110,10 +115,11 @@ const Selector = () => {
         <div className="flex h-16 w-full border rounded-lg relative">
           <input
             type="number"
-            className="w-full outline-none text-2xl font-bold text-right p-4 flex-grow-1 mr-5"
-            placeholder="Enter amount"
-            value={inputText}
-            onChange={(e) => setInputText(e.target.value.toLowerCase())}
+            className="w-full outline-none text-2xl font-bold text-right p-4 flex-grow-1 mr-5 "
+            placeholder={euro}
+            value={!input ? input : euro}
+            // onChange={(e) => setEuro(e.target.value.toLowerCase())}
+            onChange={(e) => handleChangeEuro(e.target.value.toLowerCase())}
           />
           <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-2xl font-bold">
             €

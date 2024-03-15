@@ -46,7 +46,7 @@ function InstruccionesEnvio() {
       </div> */}
       <div className="flex justify-center ">
         <button
-          class="flex items-center gap-3 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded mt-3"
+          className="flex items-center gap-3 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded mt-3"
           style={{ backgroundColor: colors.primary }}
         >
           <p className="text-xs">CONTACTANOS AHORA </p>

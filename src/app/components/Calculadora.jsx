@@ -2,7 +2,7 @@ import React from "react";
 import Selector from "./Selector";
 import InputVenezuela from "./InputVenezuela";
 
-export default function Calculadora() {
+export default function Calculadora({ tasa, euro, setEuro }) {
   return (
     <div className="px-4  py-5 bg-white mx-4  rounded-xl p-3  shadow-md">
       <div className="mt-5 mb-10">
@@ -16,12 +16,12 @@ export default function Calculadora() {
           </span>
         </h3>
       </div>
-      <Selector />
+      <Selector setEuro={setEuro} euro={euro} />
       <div className="text-xs ml-3 mt-3 mb-8">
-        <p>1 EUR= 35,50 bs</p>
+        <p>1 EUR= {tasa}</p>
       </div>
 
-      <InputVenezuela />
+      <InputVenezuela tasa={tasa} euro={euro} setEuro={setEuro} />
       <div className="text-xs ml-3 mt-3 mb-5">
         <p> Monto minimo 20 EUR</p>
       </div>

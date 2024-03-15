@@ -25,15 +25,34 @@ const europeanCountries = [
   },
 ];
 
-const InputVenezuela = () => {
+const InputVenezuela = ({ tasa, euro, setEuro }) => {
   const [countries, setCountries] = useState(europeanCountries);
-  const [inputValue, setInputValue] = useState("");
-  const [inputText, setInputText] = useState("100");
+
+  const [inputValue, setInputValue] = useState();
   const [selected, setSelected] = useState("/venezuela.png");
   const [open, setOpen] = useState(false);
+  const [numFormat, setNumFormat] = useState();
 
+  // useEffect(() => {
+  //   // setInputValue((tasa * euro).toFixed(2));
+  //   setInputValue(tasa * euro);
+  // }, [tasa, euro]);
+
+  const handleChangeEuro = (e) => {
+    const newValue = parseFloat(e);
+    const formattedValue = newValue.toLocaleString("es-VE", {
+      minimumFractionDigits: 2,
+    });
+    setNumFormat(formattedValue);
+
+    setInputValue(newValue);
+    const calculoEuro = newValue / tasa;
+    setEuro(calculoEuro.toFixed(2));
+  };
+  console.log(numFormat);
   return (
     <div className="relative mt-3 ">
+      <h1>{inputValue}</h1>
       <div
         className="bg-white px-4 text-xs absolute z-10  "
         style={{ top: "-7px", left: "20px" }}
@@ -61,10 +80,11 @@ const InputVenezuela = () => {
         <div className="flex h-16 w-full border rounded-lg relative">
           <input
             type="number"
-            className="w-full outline-none text-2xl font-bold text-right px-8 flex-grow-1 mr-5"
-            placeholder="Enter amount"
-            value={inputText}
-            onChange={(e) => setInputText(e.target.value.toLowerCase())}
+            className="w-full outline-none text-2xl font-bold text-right px-8 flex-grow-1 mr-5 "
+            placeholder={tasa * euro}
+            value={inputValue}
+            // onChange={(e) => setInputText(e.target.value.toLowerCase())}
+            onChange={(e) => handleChangeEuro(e.target.value.toLowerCase())}
           />
           <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-2xl font-bold">
             Bs
