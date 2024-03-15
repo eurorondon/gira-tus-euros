@@ -11,16 +11,11 @@ function InstruccionesEnvio() {
         Venezuela.
       </p>
 
-      <div className="grid gap-x-4 gap-y-2 grid-cols-2 mx-5 ">
-        <Image src={"/2.png"} alt="intruccion1" height={150} width={150} />
-        <Image src={"/3.png"} alt="intruccion1" height={150} width={150} />
-        <Image src={"/4.png"} alt="intruccion1" height={150} width={150} />
-        <Image
-          src={"/instruccion4.png"}
-          alt="intruccion1"
-          height={150}
-          width={150}
-        />
+      <div className="grid gap-y-2 grid-cols-2 gap-x-2 mt-2 ">
+        <Image src={"/2.png"} alt="intruccion1" height={200} width={200} />
+        <Image src={"/3.png"} alt="intruccion1" height={200} width={200} />
+        <Image src={"/4.png"} alt="intruccion1" height={200} width={200} />
+        <Image src={"/5.png"} alt="intruccion1" height={200} width={200} />
       </div>
 
       {/* <div className="grid grid-cols-2 mx-5 ">
