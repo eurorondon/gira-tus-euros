@@ -1,4 +1,6 @@
+import Link from "next/link";
 import React from "react";
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Tasa({ tasa }) {
   return (
@@ -27,9 +29,15 @@ export default function Tasa({ tasa }) {
           className="w-2/6 rounded-r-md p-2 flex items-center text-white shadow-lg"
           style={{ backgroundColor: "#2CC7D1" }}
         >
-          <div className="border p-1 rounded-md ">
+          <ScrollLink
+            to="terminos"
+            offset={100}
+            smooth={true}
+            duration={500}
+            className="border p-1 rounded-md "
+          >
             <p className="text-xs font-bold">Ver terminos y condiciones</p>
-          </div>
+          </ScrollLink>
         </div>
       </div>
     </div>

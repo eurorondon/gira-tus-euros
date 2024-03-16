@@ -8,6 +8,7 @@ function NumeroContacto() {
       <div
         className="text-white mx-4 my-5 p-4 rounded-lg"
         style={{ backgroundColor: colors.dark }}
+        id="contacto"
       >
         <h4 className="font-semibold text-xs">Unicos numero de contacto</h4>
         <div className="my-3">

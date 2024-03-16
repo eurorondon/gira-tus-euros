@@ -1,6 +1,8 @@
 import React from "react";
 import colors from "../colors";
 import Image from "next/image";
+import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 
 function Terminos() {
   return (
@@ -8,9 +10,16 @@ function Terminos() {
       <div className="mx-4 p-4 my-10 rounded-lg bg-white shadow-md ">
         <div className="flex justify-between mb-5">
           <h4 className="font-semibold">Terminos </h4>
-          <button className="font-semibold" style={{ color: colors.primary }}>
+          <ScrollLink
+            to="terminos"
+            offset={100}
+            smooth={true}
+            duration={500}
+            className="font-semibold"
+            style={{ color: colors.primary }}
+          >
             Ver Mas
-          </button>
+          </ScrollLink>
         </div>
         <ul className="text-xs ">
           <li className="mb-1">
@@ -25,6 +34,7 @@ function Terminos() {
       <div
         className="flex justify-center mb-10 mx-4"
         style={{ position: "relative" }}
+        id="terminos"
       >
         <Image
           src={"/family.png"}

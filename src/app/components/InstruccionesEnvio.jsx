@@ -4,7 +4,7 @@ import colors from "../colors";
 
 function InstruccionesEnvio() {
   return (
-    <div className="mx-4 my-5">
+    <div className="mx-4 my-5" id="instrucciones">
       <h4 className="font-bold text-sm">¿Como hacer tus envios?</h4>
       <p className="text-xs">
         Sigue las intrucciones para el correcto envio a tus familiares en
