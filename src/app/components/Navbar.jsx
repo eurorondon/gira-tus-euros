@@ -27,7 +27,6 @@ const navLinks = [
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
-  console.log(navbarOpen);
   const [scrollBackground, setScrollBackground] = useState(false);
 
   // React.useEffect(() => {

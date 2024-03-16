@@ -36,13 +36,11 @@ const InputVenezuela = ({ tasa, euro, setEuro, input, ves, setVes }) => {
     setVes(e);
 
     const newValue = e;
-    // console.log(newValue);
+
     const formattedEuro = newValue / tasa;
 
     setEuro(formattedEuro.toFixed(2));
   };
-
-  console.log(ves);
 
   return (
     <div className="relative mt-3 ">

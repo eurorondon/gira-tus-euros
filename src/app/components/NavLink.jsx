@@ -2,7 +2,6 @@ import { Link as ScrollLink } from "react-scroll";
 import React from "react";
 
 const NavLink = ({ href, title, setNavbarOpen, offset }) => {
-  console.log(offset);
   return (
     <ScrollLink
       to={href.slice(1)} // Elimina el carácter "#" del href
