@@ -12,7 +12,7 @@ function NumeroContacto() {
       >
         <h4 className="font-semibold text-xs">Unicos numero de contacto</h4>
         <div className="my-3">
-          <p className="font-extralight text-xs">
+          <p className="font-extrabold text-xs">
             +34 613 41 16 89 / +507 6524 67 47
           </p>
           <p className="font-extralight text-xs text-gray-300">

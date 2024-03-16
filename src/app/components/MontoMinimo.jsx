@@ -1,6 +1,7 @@
 import React from "react";
 import colors from "../colors";
 import Image from "next/image";
+import { HiOutlineCash } from "react-icons/hi";
 
 function MontoMinimo() {
   return (
@@ -11,7 +12,7 @@ function MontoMinimo() {
           style={{ backgroundColor: colors.primary }}
         >
           <span>Monto minimo de envio </span>
-          <Image src={"/cash.png"} width={30} height={30} alt="cash" />
+          <HiOutlineCash size={28} />
         </button>
       </div>
 
