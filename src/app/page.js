@@ -11,6 +11,7 @@ import Terminos from "./components/Terminos";
 import InstruccionesEnvio from "./components/InstruccionesEnvio";
 import NumeroContacto from "./components/NumeroContacto";
 import React from "react";
+import * as fbq from "../../lib/fpixel";
 
 const BgStyle = {
   backgroundImage: `url(../../public/fondo.png)`,
@@ -22,6 +23,9 @@ const BgStyle = {
 };
 
 export default function Home() {
+  const handleClick = () => {
+    fbq.event("Purchase", { currency: "USD", value: 10 });
+  };
   const [tasa, setTasa] = React.useState(37);
   const [euro, setEuro] = React.useState(20);
   const formatNumber = (number) => {
