@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
 import Image from "next/image";
-import FacebookPixel from "./components/FacebookPixel";
+import { FacebookPixel } from "./components/tracking";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +20,10 @@ export default function RootLayout({ children }) {
           content="hhnarhtokejdum1dvr2n2lntkac6t2"
         />
       </Head>
-      <body className={inter.className}>{children}</body>
-      <FacebookPixel />
+      <body className={inter.className}>
+        {children}
+        <FacebookPixel />
+      </body>
     </html>
   );
 }

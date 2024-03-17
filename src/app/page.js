@@ -11,7 +11,7 @@ import Terminos from "./components/Terminos";
 import InstruccionesEnvio from "./components/InstruccionesEnvio";
 import NumeroContacto from "./components/NumeroContacto";
 import React from "react";
-import * as fbq from "../../lib/fpixel";
+import * as fbq from "../../lib/fbpixel";
 
 const BgStyle = {
   backgroundImage: `url(../../public/fondo.png)`,

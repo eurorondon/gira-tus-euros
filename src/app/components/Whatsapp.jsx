@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { whatsappButtonEvent } from "../../../utils/facebookPixelEvents";
 
 function Whatsapp() {
   const [showObject, setShowObject] = React.useState(false);
@@ -21,13 +22,16 @@ function Whatsapp() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleClick = () => {
+    window.open("https://wa.me/message/2GZHD5NUAMOZC1", "_blank");
+    whatsappButtonEvent();
+  };
   if (showObject)
     return (
       <button
         className=" rounded-t-2xl sticky bottom-0 w-full"
-        onClick={() => {
-          window.open("https://wa.me/message/2GZHD5NUAMOZC1", "_blank");
-        }}
+        onClick={handleClick}
         style={{ backgroundColor: "#DCEC20" }}
       >
         <div className="p-4 " style={{ color: "#545353" }}>
