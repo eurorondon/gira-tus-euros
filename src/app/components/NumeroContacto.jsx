@@ -1,8 +1,29 @@
 import React from "react";
 import colors from "../colors";
 import Image from "next/image";
+import { whatsappButtonEvent } from "../../../utils/facebookPixelEvents";
+import { sendEventToFacebookAPI } from "../../../utils/facebookApiEvents";
+
+const eventData = {
+  event_name: "Click-Whatsapp-Button",
+  event_time: Math.floor(Date.now() / 1000),
+  action_source: "website",
+  user_data: {
+    em: [null],
+    ph: [null],
+  },
+  // custom_data: {
+  //   currency: "USD",
+  //   value: "142.52",
+  // },
+};
 
 function NumeroContacto() {
+  const handleClick = () => {
+    window.open("https://wa.me/message/2GZHD5NUAMOZC1", "_blank");
+    whatsappButtonEvent();
+    sendEventToFacebookAPI(eventData);
+  };
   return (
     <>
       <div
@@ -21,9 +42,7 @@ function NumeroContacto() {
         </div>
         <button
           className="text-xs py-1 px-2 border border-yellow-400 rounded-lg font-extralight"
-          onClick={() => {
-            window.open("https://wa.me/message/2GZHD5NUAMOZC1", "_blank");
-          }}
+          onClick={handleClick}
         >
           Escribenos aqui
         </button>

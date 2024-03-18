@@ -12,10 +12,10 @@ import InstruccionesEnvio from "./components/InstruccionesEnvio";
 import NumeroContacto from "./components/NumeroContacto";
 import React from "react";
 import * as fbq from "../../lib/fbpixel";
-import { sendEventToFacebookAPI } from "../../utils/facebookPixelEvents";
+import { sendEventToFacebookAPI } from "../../utils/facebookApiEvents";
 
 const eventData = {
-  event_name: "ViewContent",
+  event_name: "PageView",
   event_time: Math.floor(Date.now() / 1000),
   action_source: "website",
   user_data: {
@@ -52,12 +52,12 @@ export default function Home() {
 
   const isMounted = React.useRef(false);
 
-  // React.useEffect(() => {
-  //   if (!isMounted.current) {
-  //     sendEventToFacebookAPI(eventData);
-  //     isMounted.current = true;
-  //   }
-  // }, []);
+  React.useEffect(() => {
+    if (!isMounted.current) {
+      sendEventToFacebookAPI(eventData);
+      isMounted.current = true;
+    }
+  }, []);
   return (
     <div className="">
       <Hero />

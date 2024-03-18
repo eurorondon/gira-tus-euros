@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
-import {
-  sendEventToFacebookAPI,
-  whatsappButtonEvent,
-} from "../../../utils/facebookPixelEvents";
+import { whatsappButtonEvent } from "../../../utils/facebookPixelEvents";
+import { sendEventToFacebookAPI } from "../../../utils/facebookApiEvents";
 
 const eventData = {
   event_name: "Click-Whatsapp-Button",
@@ -40,14 +38,10 @@ function Whatsapp() {
     };
   }, []);
 
-  // React.useEffect(() => {
-  //   sendEventToFacebookAPI(eventData);
-  // }, []);
-
   const handleClick = () => {
-    sendEventToFacebookAPI(eventData);
     window.open("https://wa.me/message/2GZHD5NUAMOZC1", "_blank");
-    // whatsappButtonEvent();
+    whatsappButtonEvent();
+    sendEventToFacebookAPI(eventData);
   };
   if (showObject)
     return (
