@@ -12,6 +12,21 @@ import InstruccionesEnvio from "./components/InstruccionesEnvio";
 import NumeroContacto from "./components/NumeroContacto";
 import React from "react";
 import * as fbq from "../../lib/fbpixel";
+import { sendEventToFacebookAPI } from "../../utils/facebookPixelEvents";
+
+const eventData = {
+  event_name: "ViewContent",
+  event_time: Math.floor(Date.now() / 1000),
+  action_source: "website",
+  user_data: {
+    em: [null],
+    ph: [null],
+  },
+  // custom_data: {
+  //   currency: "USD",
+  //   value: "142.52",
+  // },
+};
 
 const BgStyle = {
   backgroundImage: `url(../../public/fondo.png)`,
@@ -23,9 +38,6 @@ const BgStyle = {
 };
 
 export default function Home() {
-  const handleClick = () => {
-    fbq.event("Purchase", { currency: "USD", value: 10 });
-  };
   const [tasa, setTasa] = React.useState(37);
   const [euro, setEuro] = React.useState(20);
   const formatNumber = (number) => {
@@ -37,6 +49,15 @@ export default function Home() {
 
   // Inicializar el estado de VES con el valor formateado
   const [ves, setVes] = React.useState(initialVesValue);
+
+  const isMounted = React.useRef(false);
+
+  // React.useEffect(() => {
+  //   if (!isMounted.current) {
+  //     sendEventToFacebookAPI(eventData);
+  //     isMounted.current = true;
+  //   }
+  // }, []);
   return (
     <div className="">
       <Hero />
