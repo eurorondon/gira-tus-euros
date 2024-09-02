@@ -38,7 +38,7 @@ const BgStyle = {
 };
 
 export default function Home() {
-  const [tasa, setTasa] = React.useState(38);
+  const [tasa, setTasa] = React.useState(40);
   const [euro, setEuro] = React.useState(20);
   const formatNumber = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
